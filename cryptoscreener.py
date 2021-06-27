@@ -119,12 +119,6 @@ def screenUniverse(universeSelectionDate,minMarketCap,minimumListingPeriod,circu
 
 	url = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
 
-	headers = {
-	'Accepts': 'application/json',
-	'X-CMC_PRO_API_KEY': 'b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c',
-	'Accept-Encoding': 'deflate, gzip',
-	}
-
 	session = Session()
 	session.headers.update(headers)
 

@@ -83,7 +83,7 @@ class Portfolio:
 
 		# Construct the return vectors for each coin
 		for coinptr in universe:
-			temp = coinPrices.ix[coinPrices['Coin'] == coinptr]['Close'].sort_index(ascending=True).copy()
+			temp = coinPrices.loc[coinPrices['Coin'] == coinptr]['Close'].sort_index(ascending=True).copy()
 			if periodicity == 'Monthly':
 				temp = temp.asfreq('M').ffill()
 			temp = temp.pct_change(periods=returnFreq).dropna().copy()

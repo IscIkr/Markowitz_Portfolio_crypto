@@ -60,7 +60,7 @@ if backtestmode == 'True':
 	for date in dates:
 		print(date)
 		# Dictionary of prices
-		latestPrices = pd.Series(coinPrices.ix[date].Close.values,index=coinPrices.ix[date].Coin.values).to_dict()
+		latestPrices = pd.Series(coinPrices.loc[date].Close.values,index=coinPrices.loc[date].Coin.values).to_dict()
 
 		# Initialize entry with equal weight
 		if len(indexLevel) == 0:

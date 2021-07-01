@@ -83,6 +83,11 @@ def build_request(coin_id_list):
 	}
 	return parameters
 
+def read_credential():
+	cred = json.load(open('input/credentials.json'))
+	return cred
+
+
 def screenUniverse(universeSelectionDate,minMarketCap,minimumListingPeriod,circulatingPct,minExchanges):
 	# Get pandas data set
 	coindata = pd.read_csv('input/clean_coindata.csv')
@@ -118,6 +123,8 @@ def screenUniverse(universeSelectionDate,minMarketCap,minimumListingPeriod,circu
 	filter_mktcap_glo_lon_vol = []
 
 	url = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
+
+	headers = read_credential()
 
 	session = Session()
 	session.headers.update(headers)
